@@ -7,9 +7,11 @@ runtime-version: "21.08"
 separate-locales: false
 appstream-compose: false
 build-options:
-    prefix: /usr/lib/sdk/avr-gcc
-    prepend-path: /usr/lib/sdk/avr-gcc/bin/
-    cppflags: "-I/usr/lib/sdk/avr-gcc/include/ -L/usr/lib/sdk/avr-gcc/lib"
+    prefix: /usr/lib/sdk/avr-gcc/
+    append-path: /usr/lib/sdk/avr-gcc/binutils/bin
+    append-ld-library-path: /usr/lib/sdk/avr-gcc/mpfr
+    append-ld-library-path: /usr/lib/sdk/avr-gcc/mpc
+    cppflags: "-I/usr/lib/sdk/avr-gcc/include -L/usr/lib/sdk/avr-gcc/lib"
 cleanup:
     - /share/info
     - /share/man
